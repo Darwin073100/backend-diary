@@ -10,6 +10,12 @@ const setupModels = (sequelize) => {
     Diary.init(DiarySchema, Diary.config(sequelize));
     Picture.init(PictureSchema, Picture.config(sequelize));
     User.init(UserSchema, User.config(sequelize));
+
+    Author.associate(sequelize.models);
+    Chapter.associate(sequelize.models);
+    Diary.associate(sequelize.models);
+    Picture.associate(sequelize.models);
+    User.associate(sequelize.models);
 }
 
 module.exports = { setupModels };

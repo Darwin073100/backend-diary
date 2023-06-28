@@ -20,6 +20,23 @@ const PictureSchema = {
 };
 
 class Picture extends Model {
+    static associate(models){
+        this.hasOne(models.Author, {
+            as: 'author',
+            foreignKey: 'pictureId'
+        });
+
+        this.hasOne(models.Diary, {
+            as: 'diary',
+            foreignKey: 'pictureId'
+        });
+
+        this.hasOne(models.Chapter, {
+            as: 'chapter',
+            foreignKey: 'pictureId'
+        });
+    }
+
     static config(sequelize){
         return {
             sequelize,
