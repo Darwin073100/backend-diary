@@ -4,7 +4,7 @@ const { Diary, DiarySchema } = require('./diary.model');
 const { Picture, PictureSchema } = require('./picture.model');
 const { User, UserSchema } = require('./user.model');
 
-const setupModels = (sequelize) => {
+function setupModels (sequelize){
     Author.init(AuthorSchema, Author.config(sequelize));
     Chapter.init(ChapterSchema, Chapter.config(sequelize));
     Diary.init(DiarySchema, Diary.config(sequelize));
@@ -18,4 +18,4 @@ const setupModels = (sequelize) => {
     User.associate(sequelize.models);
 }
 
-module.exports = { setupModels };
+module.exports = setupModels;

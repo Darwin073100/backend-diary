@@ -18,4 +18,4 @@ if (configuration.isProd) {
 const sequelize = new Sequelize(configuration.dbUrl, options);
 setupModels(sequelize);
 
-module.exports = { sequelize };
+module.exports = sequelize;

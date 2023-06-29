@@ -15,4 +15,4 @@ if (configuration.isProd) {
 }
 
 const pool = new Pool(options);
-module.exports = { pool };
+module.exports = pool;
