@@ -34,7 +34,7 @@ const ChapterSchema = {
     },
     pictureId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         field: 'picture_id',
         references: {
             model: PICTURE_TABLE,
@@ -61,7 +61,7 @@ class Chapter extends Model{
             sequelize,
             tableName: CHAPTER_TABLE,
             modelName: 'Chapter',
-            timestamp: false
+            timestamps: false
         }
     }
 }

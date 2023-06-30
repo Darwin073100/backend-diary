@@ -23,7 +23,6 @@ class ChapterService {
 
   async create(data) {
     const newChapter = await models.Chapter.create(data);
-    delete newChapter.user.dataValues.userPassword;
     return newChapter;
   }
 
