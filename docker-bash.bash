@@ -6,7 +6,10 @@ docker-compose up -d (service-name)
 # Ver los servicios levantados
 docker-compose ps
 
-# Parar un servicio
+# Ver todos los servicios
+docker-compose ps -a
+
+# Elimina un servicio
 docker-compose down
 docker-compose down (service-name)
 
