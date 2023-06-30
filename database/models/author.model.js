@@ -23,6 +23,7 @@ const AuthorSchema = {
     sex: {
         type: DataTypes.CHAR,
         allowNull: true,
+        length: 1,
     },
     age: {
         type: DataTypes.INTEGER,
@@ -52,7 +53,7 @@ const AuthorSchema = {
     pictureId:{
         type: DataTypes.INTEGER,
         field: 'picture_id',
-        allowNull: false,
+        allowNull: true,
         unique: true,
         references:{
             model: PICTURE_TABLE,
@@ -84,7 +85,7 @@ class Author extends Model{
             sequelize,
             tableName: AUTHOR_TABLE,
             modelName: 'Author',
-            timestamp: false
+            timestamps: false
         }
     }
 }

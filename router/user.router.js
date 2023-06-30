@@ -36,8 +36,8 @@ router.post('/',
   async (req, res, next) => {
     const body = req.body;
     try {
-      const user = await service.create(body);
-      res.status(201).json(user);
+      const newItem = await service.create(body);
+      res.status(201).json(newItem);
     } catch (error) {
       next(error);
     }
@@ -51,8 +51,8 @@ router.patch('/:id',
     const { id } = req.params;
     const body = req.body;
     try {
-      const user = await service.update(id, body);
-      res.status(200).json(user);
+      const changes = await service.update(id, body);
+      res.status(200).json(changes);
     } catch (error) {
       next(error);
     }

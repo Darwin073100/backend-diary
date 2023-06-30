@@ -10,18 +10,24 @@ class AuthorService {
   }
 
   async findById(id) {
-    const author = models.Author.findByPk(id);
+    const author = models.Author.findByPk(id,{
+      include: ['user']
+    });
     if (!author) {
       throw boom.notFound('Author not found');
     }
     return author;
   }
 
-  async create(data) {
+  async createAndUser(data) {
     const newAuthor = await models.Author.create(data, {
       include: ['user']
     });
-    delete newAuthor.user.dataValues.userPassword;
+    return newAuthor;
+  }
+
+  async create(data) {
+    const newAuthor = await models.Author.create(data);
     return newAuthor;
   }
 
