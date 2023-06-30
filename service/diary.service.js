@@ -6,14 +6,14 @@ class DiaryService {
 
   async findAll() {
     const data = await models.Diary.findAll({
-      include: ['chapter']
+      include: ['author']
     });
     return data;
   }
 
   async findById(id) {
     const diary = models.Diary.findByPk(id, {
-      include: ['chapter']
+      include: ['author']
     });
     if (!diary) {
       throw boom.notFound('Diary not found');
@@ -23,7 +23,6 @@ class DiaryService {
 
   async create(data) {
     const newDiary = await models.Diary.create(data);
-    delete newDiary.user.dataValues.userPassword;
     return newDiary;
   }
 

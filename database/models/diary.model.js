@@ -10,7 +10,7 @@ const DiarySchema = {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         allowNull: false
-    }, 
+    },
     title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -34,7 +34,7 @@ const DiarySchema = {
     },
     pictureId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         field: 'picture_id',
         unique: true,
         references: {
@@ -67,7 +67,7 @@ class Diary extends Model{
             sequelize,
             tableName: DIARY_TABLE,
             modelName: 'Diary',
-            timestamp: false
+            timestamps: false
         };
     }
 }
