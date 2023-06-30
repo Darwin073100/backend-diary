@@ -20,7 +20,7 @@ const updateUserSchema = Joi.object({
   updatedAt
 });
 
-const getUserSchema = Joi({
+const getUserSchema = Joi.object({
   id: id.required()
 });
 

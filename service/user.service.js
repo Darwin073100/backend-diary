@@ -10,9 +10,7 @@ class UserService {
   }
 
   async findById(id) {
-    const user = models.user.findByPk(id, {
-      include: ['author']
-    });
+    const user = models.User.findByPk(id);
     if (!user) {
       throw boom.notFound('User not found');
     }

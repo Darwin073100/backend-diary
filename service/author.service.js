@@ -5,9 +5,7 @@ class AuthorService {
   constructor() { }
 
   async findAll() {
-    const data = await models.Author.findAll({
-      include: ['diary']
-    });
+    const data = await models.Author.findAll();
     return data;
   }
 
