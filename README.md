@@ -6,6 +6,9 @@ En este proyecto lo que uiero es contruir una API Rest para poder crear un diari
 ### Tecnologías utilizadas:
 - Node.js
 - Express.js
-- Docker Compose
+- Docker
 - PostgreSql
 - PgAdmin
+
+### Proyecto futuro: FrondEnd con React.js
+Consumir esta API y poder interactuar con ella ya con componentes visuales, implementar un login para que cada persona tenga sus datos de forma privada.
