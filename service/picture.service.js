@@ -12,7 +12,7 @@ class PictureService {
   async findById(id) {
     const picture = models.Picture.findByPk(id);
     if (!picture) {
-      throw boom.notFound('Picture not found');
+      return boom.notFound('Picture not found');
     }
     return picture;
   }
@@ -31,6 +31,26 @@ class PictureService {
 
   async delete(id) {
     const model = await this.findById(id);
+    await model.destroy();
+    return {
+      message: true
+    }
+  }
+
+  async findByName(name) {
+    const picture = models.Picture.findOne({
+      where: {
+        name: name
+      }
+    });
+    if (!picture) {
+      throw boom.notFound('Picture not found');
+    }
+    return picture;
+  }
+
+  async deleteByName(name) {
+    const model = await this.findByName(name);
     await model.destroy();
     return {
       message: true

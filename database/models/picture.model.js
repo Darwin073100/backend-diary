@@ -11,11 +11,11 @@ const PictureSchema = {
     },
     address: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     }
 };
 
@@ -42,7 +42,7 @@ class Picture extends Model {
             sequelize,
             tableName: PICTURE_TABLE,
             modelName: 'Picture',
-            timestamp: false
+            timestamps: false
         }
     }
 }
